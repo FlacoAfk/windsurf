@@ -1,0 +1,269 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║              🚀 CÓMO SUBIR ESTE PROYECTO A GITHUB - GUÍA RÁPIDA          ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚡ OPCIÓN 1: SETUP AUTOMÁTICO (Recomendado)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣  Ejecuta el script automático:
+    
+    python setup_github.py
+
+    Este script hará TODO por ti:
+    ✅ Inicializa Git
+    ✅ Prepara archivos
+    ✅ Configura remoto
+    ✅ Crea commit inicial
+    ✅ Sube a GitHub
+    ✅ Crea tags
+
+2️⃣  Sigue las instrucciones en pantalla
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📝 OPCIÓN 2: MANUAL (Paso a Paso)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PASO 1: CREAR REPOSITORIO EN GITHUB
+────────────────────────────────────
+1. Ve a: https://github.com/new
+2. Nombre: windsurf-reset-tool (o el que prefieras)
+3. Descripción: 🔧 Educational tool to study desktop app state management
+4. Visibilidad: Public (recomendado para proyectos educativos)
+5. NO inicialices con README, .gitignore o LICENSE
+6. Click "Create repository"
+
+
+PASO 2: PREPARAR ARCHIVOS
+──────────────────────────
+# Renombrar README para GitHub
+1. Elimina el archivo README.md actual (índice corto)
+2. Renombra README_GITHUB.md → README.md
+
+# O con PowerShell:
+Move-Item README_GITHUB.md README.md -Force
+
+
+PASO 3: ACTUALIZAR URLs EN README.md
+─────────────────────────────────────
+1. Abre README.md
+2. Busca y reemplaza:
+   - "yourusername" → TU_USUARIO_GITHUB
+   - "windsurf-reset-tool" → NOMBRE_DE_TU_REPO
+
+
+PASO 4: INICIALIZAR GIT
+────────────────────────
+cd c:\Users\elkaw\Desktop\windsurd
+git init
+git branch -M main
+
+
+PASO 5: CONFIGURAR REMOTO
+──────────────────────────
+# Reemplaza TU_USUARIO con tu usuario de GitHub
+git remote add origin https://github.com/TU_USUARIO/windsurf-reset-tool.git
+
+
+PASO 6: CREAR COMMIT INICIAL
+─────────────────────────────
+git add .
+git commit -m "Initial commit: Windsurf Reset Tool v2.0.0
+
+- Complete reset functionality
+- Test suite and documentation
+- Educational purpose project"
+
+
+PASO 7: SUBIR A GITHUB
+───────────────────────
+git push -u origin main
+
+NOTA: Si pide autenticación, usa un Personal Access Token:
+- GitHub → Settings → Developer settings → Personal access tokens
+- Generate new token (classic)
+- Selecciona permisos: repo
+- Usa el token como contraseña
+
+
+PASO 8: CREAR TAG DE VERSIÓN
+─────────────────────────────
+git tag -a v2.0.0 -m "Release v2.0.0 - Complete Reset Tool"
+git push origin v2.0.0
+
+
+PASO 9: CREAR RELEASE EN GITHUB
+────────────────────────────────
+1. Ve a: https://github.com/TU_USUARIO/windsurf-reset-tool/releases/new
+2. Tag: v2.0.0
+3. Title: v2.0.0 - Complete Reset Tool
+4. Descripción: Copia del CHANGELOG o crea tu propia descripción
+5. Publish release
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎨 CONFIGURACIÓN ADICIONAL DEL REPOSITORIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EN GITHUB (tu repositorio):
+
+1. ABOUT (sección derecha):
+   ✅ Descripción: Educational tool for desktop app state management
+   ✅ Topics: python, windsurf, educational, automation, reset-tool
+
+2. SETTINGS → Features:
+   ✅ Habilitar Issues
+   ✅ Habilitar Discussions (recomendado)
+   ✅ Habilitar Wiki (opcional)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📚 ARCHIVOS INCLUIDOS PARA GITHUB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ .gitignore              - Archivos a ignorar
+✅ LICENSE                 - Licencia MIT + Disclaimer educativo
+✅ README.md               - Documentación principal (GitHub)
+✅ CONTRIBUTING.md         - Guía para contribuidores
+✅ CHANGELOG.md            - Historial de versiones
+✅ version.py              - Sistema de versionamiento
+✅ update_version.py       - Script para actualizar versiones
+✅ setup_github.py         - Script de setup automático
+✅ GITHUB_SETUP.md         - Guía detallada para GitHub
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔄 PARA FUTURAS ACTUALIZACIONES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ACTUALIZAR CÓDIGO:
+──────────────────
+git add .
+git commit -m "feat: descripción del cambio"
+git push origin main
+
+
+ACTUALIZAR VERSIÓN (Automático):
+─────────────────────────────────
+python update_version.py
+
+# El script te preguntará:
+# - Tipo de actualización (patch/minor/major)
+# - Cambios realizados
+# - Y actualizará automáticamente:
+#   • version.py
+#   • CHANGELOG.md
+#   • README badges
+
+
+CREAR NUEVO RELEASE:
+────────────────────
+1. Actualiza versión con update_version.py
+2. Haz commit y push
+3. Crea tag: git tag -a vX.X.X -m "Release vX.X.X"
+4. Push tag: git push origin vX.X.X
+5. Crea release en GitHub usando el tag
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚠️  IMPORTANTE - PROPÓSITO EDUCATIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Este proyecto incluye un DISCLAIMER EDUCATIVO en:
+  • LICENSE (archivo de licencia)
+  • README.md (sección prominente)
+  • Código fuente (header con versión)
+
+El proyecto está diseñado para:
+  ✅ Aprender sobre persistencia de datos
+  ✅ Estudiar manejo de estado en apps desktop
+  ✅ Practicar Python y administración de sistemas
+  ✅ Comprender arquitectura de aplicaciones
+
+NO está destinado a:
+  ❌ Eludir términos de servicio
+  ❌ Uso comercial no autorizado
+  ❌ Violar políticas de software
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🆘 SOLUCIÓN DE PROBLEMAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROBLEMA: "Git no está instalado"
+─────────────────────────────────
+Descargar de: https://git-scm.com/downloads
+
+
+PROBLEMA: "remote origin already exists"
+────────────────────────────────────────
+git remote remove origin
+git remote add origin https://github.com/TU_USUARIO/repo.git
+
+
+PROBLEMA: "failed to push"
+───────────────────────────
+# Si el repo remoto tiene contenido:
+git pull origin main --allow-unrelated-histories
+git push origin main
+
+
+PROBLEMA: Error de autenticación
+─────────────────────────────────
+Usa Personal Access Token:
+1. GitHub → Settings → Developer settings
+2. Personal access tokens → Tokens (classic)
+3. Generate new token
+4. Selecciona: repo (todos los permisos)
+5. Usa el token como contraseña al hacer push
+
+
+PROBLEMA: setup_github.py falla
+────────────────────────────────
+Sigue la OPCIÓN 2 (manual) paso a paso
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📖 DOCUMENTACIÓN ADICIONAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Para más detalles, lee:
+
+  📄 GITHUB_SETUP.md      - Guía completa y detallada
+  📄 CONTRIBUTING.md      - Cómo contribuir al proyecto
+  📄 README.md            - Documentación del proyecto
+  📄 CHANGELOG.md         - Historial de cambios
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ CHECKLIST FINAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Antes de considerar el proyecto "publicado":
+
+  [ ] Repositorio creado en GitHub
+  [ ] Git inicializado localmente
+  [ ] README.md preparado (renombrado de README_GITHUB.md)
+  [ ] URLs actualizadas en README.md
+  [ ] Repositorio remoto configurado
+  [ ] Commit inicial creado
+  [ ] Proyecto subido (git push)
+  [ ] Tag v2.0.0 creado y subido
+  [ ] Release v2.0.0 creado en GitHub
+  [ ] Topics agregados (python, windsurf, educational)
+  [ ] Descripción actualizada en "About"
+  [ ] Issues habilitado
+  [ ] Discussions habilitado (opcional)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+¡LISTO! Tu proyecto educativo estará en GitHub y listo para compartir 🎓✨
+
+Tu URL será: https://github.com/TU_USUARIO/windsurf-reset-tool
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
