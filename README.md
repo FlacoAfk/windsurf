@@ -1,6 +1,6 @@
 # 🔧 Windsurf Reset Tool
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/yourusername/windsurf-reset-tool)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/FlacoAfk/windsurf-reset-tool)
 [![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Educational](https://img.shields.io/badge/purpose-educational-green.svg)](LICENSE)
@@ -53,7 +53,7 @@ Este proyecto fue creado con **fines educativos** para:
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/yourusername/windsurf-reset-tool.git
+git clone https://github.com/FlacoAfk/windsurf-reset-tool.git
 cd windsurf-reset-tool
 
 # Instalar dependencias
@@ -259,8 +259,8 @@ Este software se proporciona con **fines educativos**. Los autores no fomentan n
 ## 📞 Soporte
 
 - 📖 **Documentación**: Lee [INSTRUCCIONES_FINALES.md](INSTRUCCIONES_FINALES.md)
-- 🐛 **Reportar Bugs**: [Issues](https://github.com/yourusername/windsurf-reset-tool/issues)
-- 💬 **Discusiones**: [Discussions](https://github.com/yourusername/windsurf-reset-tool/discussions)
+- 🐛 **Reportar Bugs**: [Issues](https://github.com/FlacoAfk/windsurf-reset-tool/issues)
+- 💬 **Discusiones**: [Discussions](https://github.com/FlacoAfk/windsurf-reset-tool/discussions)
 
 ## 🔗 Enlaces
 
@@ -275,6 +275,6 @@ Este software se proporciona con **fines educativos**. Los autores no fomentan n
 
 **Hecho con ❤️ para la comunidad de aprendizaje de Python**
 
-[⭐ Star](https://github.com/yourusername/windsurf-reset-tool) • [🐛 Report Bug](https://github.com/yourusername/windsurf-reset-tool/issues) • [✨ Request Feature](https://github.com/yourusername/windsurf-reset-tool/issues)
+[⭐ Star](https://github.com/FlacoAfk/windsurf-reset-tool) • [🐛 Report Bug](https://github.com/FlacoAfk/windsurf-reset-tool/issues) • [✨ Request Feature](https://github.com/FlacoAfk/windsurf-reset-tool/issues)
 
 </div>
