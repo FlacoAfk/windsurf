@@ -1,9 +1,10 @@
 # 🔧 Windsurf Reset Tool
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/FlacoAfk/windsurf-reset-tool)
+[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](https://github.com/FlacoAfk/windsurf-reset-tool)
 [![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Educational](https://img.shields.io/badge/purpose-educational-green.svg)](LICENSE)
+[![Security](https://img.shields.io/badge/security-enhanced-brightgreen.svg)](GUIA_SEGURIDAD.md)
 
 > 🎓 **Proyecto Educativo**: Herramienta para estudiar el manejo de estado y persistencia de datos en aplicaciones de escritorio.
 
@@ -29,6 +30,14 @@ Este proyecto fue creado con **fines educativos** para:
 - 💾 **Backups automáticos** con timestamp
 - 🔍 **Detección automática** de procesos de Windsurf
 - ⚡ **Cierre automático** de la aplicación si está en ejecución
+
+### 🆕 Nuevas Características v2.1
+- 🔒 **API Key Extractor** - Verifica claves de forma segura (enmascaradas)
+- 📊 **Enhanced Logger** - Sistema de logging avanzado con archivos
+- 🔍 **Post-Reset Verify** - Confirmación de cambios con snapshots
+- 🎮 **Complete Check Tool** - Script todo-en-uno automatizado
+- 📈 **Estadísticas detalladas** - Métricas completas de cada operación
+- 🛡️ **Guía de Seguridad** - Aprende a proteger información sensible
 
 ### 🧪 Suite de Pruebas Completa
 - ✅ **Simulación dry-run** - Ver qué hará sin hacer cambios
@@ -62,7 +71,21 @@ pip install -r requirements.txt
 
 ## 📖 Uso
 
-### Opción 1: Scripts de Inicio Rápido (Windows)
+### Opción 1: Script Completo TODO-EN-UNO (Recomendado) ⭐
+
+```bash
+# Script automatizado con menú interactivo
+run_complete_check.bat
+
+# Incluye:
+# - Verificación de dependencias
+# - Pruebas del sistema
+# - Verificación de API keys (segura)
+# - Snapshot antes del reset
+# - Menú de opciones (simulación/reset/verificar)
+```
+
+### Opción 2: Scripts de Inicio Rápido (Windows)
 
 ```bash
 # 1. Ver simulación (SEGURO - No hace cambios)
@@ -73,6 +96,12 @@ run_tests.bat
 
 # 3. Ejecutar reseteo real
 run_reset.bat
+
+# 4. Verificar API keys de forma segura (NUEVO)
+python api_key_extractor.py
+
+# 5. Verificar cambios post-reset (NUEVO)
+python post_reset_verify.py
 ```
 
 ### Opción 2: Comandos Manuales
@@ -110,9 +139,15 @@ graph TD
 ```
 windsurf-reset-tool/
 ├── 🔧 Scripts Principales
-│   ├── windsurf_reset.py      # Script principal de reseteo
+│   ├── windsurf_reset.py      # Script principal de reseteo v2.1
 │   ├── run_reset.bat          # Inicio rápido (Windows)
+│   ├── run_complete_check.bat # ⭐ TODO-EN-UNO (NUEVO)
 │   └── requirements.txt       # Dependencias Python
+│
+├── 🔒 Herramientas de Seguridad (NUEVO)
+│   ├── api_key_extractor.py   # Verifica API keys (enmascaradas)
+│   ├── post_reset_verify.py   # Verificación con snapshots
+│   └── enhanced_logger.py     # Sistema de logging avanzado
 │
 ├── 🧪 Suite de Pruebas
 │   ├── test_script.py         # Pruebas intensivas
@@ -124,6 +159,8 @@ windsurf-reset-tool/
 │
 ├── 📚 Documentación
 │   ├── README.md              # Este archivo
+│   ├── GUIA_SEGURIDAD.md      # ⭐ Guía de seguridad (NUEVO)
+│   ├── MEJORAS_V2.1.md        # ⭐ Nuevas características (NUEVO)
 │   ├── START_HERE.txt         # Inicio rápido
 │   ├── GUIA_RAPIDA.md         # Guía paso a paso
 │   ├── GUIA_PRUEBAS.md        # Uso de pruebas

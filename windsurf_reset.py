@@ -7,7 +7,7 @@ import platform
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 from rich.console import Console
 from rich.panel import Panel
 from rich.progress import (
@@ -29,7 +29,7 @@ from rich.text import Text
 try:
     from version import __version__, __license__, __copyright__
 except ImportError:
-    __version__ = "2.0.0"
+    __version__ = "2.1.0"  # Actualizado
     __license__ = "MIT"
     __copyright__ = "2024"
 
@@ -39,6 +39,13 @@ try:
     PSUTIL_AVAILABLE = True
 except ImportError:
     PSUTIL_AVAILABLE = False
+
+# Importar enhanced logger si está disponible
+try:
+    from enhanced_logger import get_logger, EnhancedLogger
+    ENHANCED_LOGGER_AVAILABLE = True
+except ImportError:
+    ENHANCED_LOGGER_AVAILABLE = False
 
 # --- Import OS-specific modules ---
 if platform.system() == "Windows":
@@ -317,7 +324,7 @@ def display_device_ids(ids: Dict[str, str], title: str = "Device Identifiers"):
 
 
 # --- Clean authentication and session files ---
-def clean_auth_files(base_path: Path) -> int:
+def clean_auth_files(base_path: Path, stats: Optional['ResetStatistics'] = None) -> int:
     """Remove authentication, session, and cache files."""
     files_removed = 0
     
@@ -353,17 +360,65 @@ def clean_auth_files(base_path: Path) -> int:
                 if path.is_file():
                     path.unlink()
                     files_removed += 1
+                    if stats:
+                        stats.add_file_deleted()
                 elif path.is_dir():
                     shutil.rmtree(path)
                     files_removed += 1
+                    if stats:
+                        stats.add_dir_deleted()
         except Exception as e:
             console.print(f"[warning]Warning: Could not remove {path.name}: {str(e)}[/warning]")
+            if stats:
+                stats.add_warning()
     
     return files_removed
 
 
+# --- Statistics tracker ---
+class ResetStatistics:
+    """Rastrea estadísticas de la operación de reset."""
+    
+    def __init__(self):
+        self.files_deleted = 0
+        self.dirs_deleted = 0
+        self.errors = 0
+        self.warnings = 0
+        self.backup_created = False
+        self.processes_closed = 0
+        self.start_time = datetime.now()
+    
+    def add_file_deleted(self):
+        self.files_deleted += 1
+    
+    def add_dir_deleted(self):
+        self.dirs_deleted += 1
+    
+    def add_error(self):
+        self.errors += 1
+    
+    def add_warning(self):
+        self.warnings += 1
+    
+    def get_summary(self) -> Dict:
+        """Retorna un resumen de las estadísticas."""
+        duration = (datetime.now() - self.start_time).total_seconds()
+        return {
+            'files_deleted': self.files_deleted,
+            'dirs_deleted': self.dirs_deleted,
+            'total_deleted': self.files_deleted + self.dirs_deleted,
+            'errors': self.errors,
+            'warnings': self.warnings,
+            'backup_created': self.backup_created,
+            'processes_closed': self.processes_closed,
+            'duration_seconds': duration
+        }
+
+
 # --- Reset Windsurf device IDs and authentication ---
 def reset_windsurf_id() -> bool:
+    stats = ResetStatistics()
+    
     try:
         # Verificar si Windsurf está en ejecución
         running_processes = check_windsurf_running()
@@ -386,6 +441,7 @@ def reset_windsurf_id() -> bool:
             if PSUTIL_AVAILABLE:
                 if confirm_action("Would you like to automatically close Windsurf processes?"):
                     kill_windsurf_processes(running_processes)
+                    stats.processes_closed = len(running_processes)
                     console.print("[success]Windsurf processes have been closed.[/success]\n")
                 else:
                     error_message = Text(
@@ -414,6 +470,7 @@ def reset_windsurf_id() -> bool:
         if storage_file.exists():
             if confirm_action("Would you like to create a backup before continuing?"):
                 backup_file(storage_file)
+                stats.backup_created = True
             else:
                 warning_message = Text("Continuing without creating a backup", justify="center")
                 console.print(
@@ -440,7 +497,7 @@ def reset_windsurf_id() -> bool:
             progress.update(task, completed=current_step)
 
             progress.update(task, description="🧹 Cleaning authentication and session files...")
-            files_removed = clean_auth_files(base_path)
+            files_removed = clean_auth_files(base_path, stats)
             current_step += 1
             progress.update(task, completed=current_step)
             console.print(f"[info]Removed {files_removed} cache/session files[/info]")
@@ -506,6 +563,29 @@ def reset_windsurf_id() -> bool:
         console.print(Panel(success_message, title="Success", border_style="success", padding=(1, 2)))
 
         display_device_ids(new_ids, "New Device Identifiers")
+        
+        # Mostrar estadísticas
+        summary = stats.get_summary()
+        console.print("\n" + "="*60)
+        console.print("[bold cyan]📊 ESTADÍSTICAS DE LA OPERACIÓN[/bold cyan]")
+        console.print("="*60)
+        
+        stats_table = Table.grid(padding=1)
+        stats_table.add_column(style="cyan")
+        stats_table.add_column(style="green")
+        
+        stats_table.add_row("⏱️  Duración:", f"{summary['duration_seconds']:.2f} segundos")
+        stats_table.add_row("📁 Archivos eliminados:", str(summary['files_deleted']))
+        stats_table.add_row("📂 Directorios eliminados:", str(summary['dirs_deleted']))
+        stats_table.add_row("📦 Total eliminado:", str(summary['total_deleted']))
+        stats_table.add_row("🔒 Backup creado:", "Sí" if summary['backup_created'] else "No")
+        stats_table.add_row("🚫 Procesos cerrados:", str(summary['processes_closed']))
+        stats_table.add_row("⚠️  Advertencias:", str(summary['warnings']))
+        stats_table.add_row("❌ Errores:", str(summary['errors']))
+        
+        console.print(stats_table)
+        console.print("="*60 + "\n")
+        
         return True
 
     except WindsurfResetError as e:

@@ -11,7 +11,8 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-console = Console()
+# Console con soporte UTF-8 para Windows
+console = Console(force_terminal=True, legacy_windows=False)
 
 def print_section(title):
     """Imprime un separador de sección."""
