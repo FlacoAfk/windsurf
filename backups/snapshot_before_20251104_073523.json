@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-11-04T07:35:23.536006",
+  "device_ids": {
+    "telemetry.machineId": "b50aba22f066f12a572907b6a61f52b781501cce9713fb3f4dc98bcb55492c76",
+    "telemetry.macMachineId": "0d06fd98cc1597516eaf176eab2c697814a39a99f264790e5c56437ce88c6375",
+    "telemetry.devDeviceId": "e577629c-2c5d-4a0f-9bd9-821242e71859",
+    "telemetry.sqmId": "{081BCF97-8991-4B65-AEBC-309166BC4CD6}"
+  },
+  "files_exist": {
+    "Cookies": false,
+    "Cookies-journal": false,
+    "Network Persistent State": false,
+    "Cache": true,
+    "CachedData": true,
+    "Code Cache": true,
+    "GPUCache": true,
+    "Session Storage": true,
+    "Local Storage": true,
+    "IndexedDB": false,
+    "Codeium Storage": false,
+    "Workspace Storage": true,
+    "Logs": true
+  }
+}

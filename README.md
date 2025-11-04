@@ -3,65 +3,98 @@
 [![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](https://github.com/FlacoAfk/windsurf-reset-tool)
 [![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Educational](https://img.shields.io/badge/purpose-educational-green.svg)](LICENSE)
-[![Security](https://img.shields.io/badge/security-enhanced-brightgreen.svg)](GUIA_SEGURIDAD.md)
+[![Security](https://img.shields.io/badge/security-verified-brightgreen.svg)](docs/GUIA_SEGURIDAD.md)
 
 > 🎓 **Proyecto Educativo**: Herramienta para estudiar el manejo de estado y persistencia de datos en aplicaciones de escritorio.
 
-Una herramienta completa en Python para resetear los identificadores de dispositivo y datos de sesión de Windsurf, con el propósito de entender cómo las aplicaciones manejan la autenticación y el estado del usuario.
+Herramienta completa en Python para resetear identificadores de dispositivo y datos de sesión de Windsurf, diseñada con fines educativos para comprender cómo las aplicaciones manejan la autenticación y el estado del usuario.
+
+---
+
+## 🚀 Inicio Rápido
+
+```bash
+# 1. Clonar e instalar
+git clone https://github.com/FlacoAfk/windsurf-reset-tool.git
+cd windsurf-reset-tool
+pip install -r requirements.txt
+
+# 2. Ejecutar (Windows)
+run_reset.bat
+
+# 3. Reiniciar Windsurf
+```
+
+Para más opciones, consulta la sección [Uso](#-uso).
+
+---
+
+## 📑 Tabla de Contenidos
+
+- [Características](#-características)
+- [Instalación](#-instalación)
+- [Uso](#-uso)
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+- [Seguridad](#-seguridad)
+- [Tests](#-tests)
+- [Documentación](#-documentación)
+- [Contribuir](#-contribuir)
+- [Licencia](#-licencia)
+
+---
 
 ## ⚠️ Propósito Educativo
 
 Este proyecto fue creado con **fines educativos** para:
+
 - 📚 Aprender sobre manejo de estado en aplicaciones desktop
 - 🔍 Estudiar sistemas de persistencia de datos
 - 💻 Practicar Python y administración de sistemas
-- 🛠️ Comprender arquitectura de configuración de aplicaciones
-- 🧪 Implementar suites de pruebas y validación
+- 🛠️ Comprender arquitectura de aplicaciones
+- 🧪 Implementar suites de pruebas
 
-**No está destinado a eludir términos de servicio.** Los usuarios son responsables de usar esta herramienta de acuerdo con las políticas de Windsurf y las leyes aplicables.
+**No está destinado a eludir términos de servicio.** Los usuarios son responsables de usar esta herramienta de acuerdo con las políticas de Windsurf.
+
+---
 
 ## 🌟 Características
 
 ### ✨ Funcionalidades Principales
+
 - 🗑️ **Limpieza completa** de 15+ tipos de archivos (cookies, cache, sesiones)
 - 🆔 **Reseteo de identificadores** de dispositivo
 - 🔐 **Eliminación de datos de autenticación**
 - 💾 **Backups automáticos** con timestamp
-- 🔍 **Detección automática** de procesos de Windsurf
-- ⚡ **Cierre automático** de la aplicación si está en ejecución
+- 🔍 **Detección automática** de procesos Windsurf
+- ⚡ **Cierre automático** de la aplicación
 
-### 🆕 Nuevas Características v2.1
-- 🔒 **API Key Extractor** - Verifica claves de forma segura (enmascaradas)
-- 📊 **Enhanced Logger** - Sistema de logging avanzado con archivos
-- 🔍 **Post-Reset Verify** - Confirmación de cambios con snapshots
-- 🎮 **Complete Check Tool** - Script todo-en-uno automatizado
-- 📈 **Estadísticas detalladas** - Métricas completas de cada operación
+### 🔒 Herramientas de Seguridad
+
+- 🔑 **API Key Extractor** - Verifica claves de forma segura (enmascaradas)
+- 📊 **Post-Reset Verify** - Confirmación de cambios con snapshots
 - 🛡️ **Guía de Seguridad** - Aprende a proteger información sensible
+- ✅ **Security Scanner** - Detecta API keys expuestas
 
-### 🧪 Suite de Pruebas Completa
+### 🧪 Suite de Tests
+
 - ✅ **Simulación dry-run** - Ver qué hará sin hacer cambios
-- ✅ **Pruebas intensivas** - Verificar configuración del sistema
-- ✅ **Verificación post-reseteo** - Confirmar que los cambios se aplicaron
-- ✅ **Scripts de inicio rápido** - Ejecutar con un click
+- ✅ **Tests de seguridad** - Verificar limpieza de API keys
+- ✅ **Verificación post-reset** - Confirmar cambios aplicados
+- ✅ **Tests intensivos** - Validar configuración del sistema
 
-### 📚 Documentación Exhaustiva
-- 📖 Guías paso a paso en español
-- 🎯 Instrucciones de inicio rápido
-- 🔧 Documentación técnica detallada
-- 💡 Solución de problemas
-- 📝 Changelog completo
+---
 
-## 🚀 Instalación
+## 🔧 Instalación
 
-### Requisitos Previos
+### Requisitos
+
 - Python 3.7 o superior
-- pip (gestor de paquetes de Python)
+- pip (gestor de paquetes)
 
-### Instalación Rápida
+### Pasos
 
 ```bash
-# Clonar el repositorio
+# Clonar repositorio
 git clone https://github.com/FlacoAfk/windsurf-reset-tool.git
 cd windsurf-reset-tool
 
@@ -69,132 +102,118 @@ cd windsurf-reset-tool
 pip install -r requirements.txt
 ```
 
+---
+
 ## 📖 Uso
 
-### Opción 1: Script Completo TODO-EN-UNO (Recomendado) ⭐
+### Método 1: Launcher (Recomendado - Windows)
 
 ```bash
-# Script automatizado con menú interactivo
-run_complete_check.bat
-
-# Incluye:
-# - Verificación de dependencias
-# - Pruebas del sistema
-# - Verificación de API keys (segura)
-# - Snapshot antes del reset
-# - Menú de opciones (simulación/reset/verificar)
-```
-
-### Opción 2: Scripts de Inicio Rápido (Windows)
-
-```bash
-# 1. Ver simulación (SEGURO - No hace cambios)
-run_simulation.bat
-
-# 2. Ejecutar pruebas (SEGURO - No hace cambios)
-run_tests.bat
-
-# 3. Ejecutar reseteo real
 run_reset.bat
-
-# 4. Verificar API keys de forma segura (NUEVO)
-python api_key_extractor.py
-
-# 5. Verificar cambios post-reset (NUEVO)
-python post_reset_verify.py
 ```
 
-### Opción 2: Comandos Manuales
+### Método 2: Python Directo
 
 ```bash
-# Ver simulación
-python simulate_reset.py
-
-# Ejecutar pruebas
-python test_script.py
-
-# Ejecutar reseteo
 python windsurf_reset.py
-
-# Verificar cambios después
-python verify_changes.py
 ```
 
-## 🎯 Flujo de Trabajo Recomendado
+### Método 3: Scripts Auxiliares
 
-```mermaid
-graph TD
-    A[Instalar Dependencias] --> B[Ejecutar Simulación]
-    B --> C[Ejecutar Pruebas]
-    C --> D{¿Todas Pasan?}
-    D -->|No| E[Revisar Errores]
-    E --> C
-    D -->|Sí| F[Ejecutar Reseteo]
-    F --> G[Reiniciar Windsurf]
-    G --> H[Verificar Cambios]
+```bash
+# Ver simulación (seguro, no hace cambios)
+python scripts/simulate_reset.py
+
+# Verificar procesos de Windsurf
+python scripts/check_windsurf.py
+
+# Verificar API keys de forma segura
+python scripts/verify_api_key.py
+
+# Verificar cambios después del reset
+python scripts/post_reset_verify.py
 ```
+
+### Método 4: Suite de Tests
+
+```bash
+# Ejecutar todos los tests
+tests/run_all_tests.bat
+
+# O individualmente
+python tests/test_api_key_cleanup.py
+python tests/test_comprehensive_security.py
+python tests/test_script.py
+```
+
+---
 
 ## 📁 Estructura del Proyecto
 
 ```
 windsurf-reset-tool/
+│
+├── 📄 README.md              # Este archivo
+├── 📄 LICENSE                # Licencia MIT
+├── 📄 requirements.txt       # Dependencias Python
+├── 📄 .gitignore            # Archivos ignorados
+│
 ├── 🔧 Scripts Principales
-│   ├── windsurf_reset.py      # Script principal de reseteo v2.1
-│   ├── run_reset.bat          # Inicio rápido (Windows)
-│   ├── run_complete_check.bat # ⭐ TODO-EN-UNO (NUEVO)
-│   └── requirements.txt       # Dependencias Python
+│   ├── windsurf_reset.py    # Script principal v2.1
+│   ├── version.py           # Sistema de versionamiento
+│   └── run_reset.bat        # Launcher Windows
 │
-├── 🔒 Herramientas de Seguridad (NUEVO)
-│   ├── api_key_extractor.py   # Verifica API keys (enmascaradas)
-│   ├── post_reset_verify.py   # Verificación con snapshots
-│   └── enhanced_logger.py     # Sistema de logging avanzado
+├── 📁 docs/                  # Documentación
+│   ├── README_ES.md         # Documentación en español
+│   ├── GUIA_RAPIDA.md       # Guía de inicio rápido
+│   ├── GUIA_SEGURIDAD.md    # Guía de seguridad
+│   ├── GUIA_PRUEBAS.md      # Guía de tests
+│   ├── CHANGELOG.md         # Historial de versiones
+│   ├── CONTRIBUTING.md      # Guía de contribución
+│   └── REPORTE_LIMPIEZA.md  # Reporte de seguridad
 │
-├── 🧪 Suite de Pruebas
-│   ├── test_script.py         # Pruebas intensivas
-│   ├── simulate_reset.py      # Simulación dry-run
-│   ├── verify_changes.py      # Verificación post-reseteo
-│   ├── check_windsurf.py      # Verificador de procesos
-│   ├── run_tests.bat          # Ejecuta pruebas
-│   └── run_simulation.bat     # Ejecuta simulación
+├── 📁 scripts/               # Scripts auxiliares
+│   ├── api_key_extractor.py    # Extractor seguro de API keys
+│   ├── check_windsurf.py       # Verificador de procesos
+│   ├── post_reset_verify.py    # Verificación post-reset
+│   ├── simulate_reset.py       # Simulación dry-run
+│   ├── verify_api_key.py       # Verificador de API keys
+│   ├── verify_changes.py       # Verificador de cambios
+│   ├── run_simulation.bat      # Launcher simulación
+│   ├── run_tests.bat           # Launcher tests
+│   ├── run_complete_check.bat  # Check completo
+│   └── verify_key.bat          # Launcher verificador
 │
-├── 📚 Documentación
-│   ├── README.md              # Este archivo
-│   ├── GUIA_SEGURIDAD.md      # ⭐ Guía de seguridad (NUEVO)
-│   ├── MEJORAS_V2.1.md        # ⭐ Nuevas características (NUEVO)
-│   ├── START_HERE.txt         # Inicio rápido
-│   ├── GUIA_RAPIDA.md         # Guía paso a paso
-│   ├── GUIA_PRUEBAS.md        # Uso de pruebas
-│   ├── README_ES.md           # Documentación técnica
-│   ├── INSTRUCCIONES_FINALES.md
-│   ├── RESUMEN_MEJORAS.md     # Qué se mejoró
-│   └── CHANGELOG.md           # Historial de versiones
+├── 📁 tests/                 # Suite de tests
+│   ├── test_script.py              # Tests principales
+│   ├── test_api_key_cleanup.py     # Tests de seguridad
+│   ├── test_comprehensive_security.py  # Tests exhaustivos
+│   └── run_all_tests.bat           # Ejecutar todos los tests
 │
-├── ⚙️ Configuración
-│   ├── .gitignore             # Archivos ignorados por git
-│   ├── LICENSE                # Licencia MIT
-│   └── version.py             # Sistema de versionamiento
-│
-└── 📝 GitHub
-    └── .github/
-        └── workflows/         # GitHub Actions (futuro)
+└── 📁 backups/               # Snapshots y backups
+    └── snapshot_*.json       # Snapshots de estado
 ```
+
+---
 
 ## 🔍 ¿Qué Hace Exactamente?
 
 ### Archivos que Elimina
+
 ```
 %APPDATA%\Windsurf\
-├── 🗑️ Cookies                    (Tokens de sesión)
-├── 🗑️ Local Storage              (Datos persistentes - API keys)
-├── 🗑️ Session Storage            (Sesiones temporales)
-├── 🗑️ Cache\                     (Cache general)
-├── 🗑️ IndexedDB\                 (Base de datos local)
-├── 🗑️ User\globalStorage\codeium.windsurf\
-├── 🗑️ User\workspaceStorage\
-└── 🗑️ logs\
+├── 🗑️ Cookies                 # Tokens de sesión
+├── 🗑️ Local Storage           # Datos persistentes + API keys
+├── 🗑️ Session Storage         # Sesiones temporales
+├── 🗑️ Cache/                  # Cache general
+├── 🗑️ IndexedDB/              # Base de datos local
+├── 🗑️ User/globalStorage/codeium.windsurf/
+├── 🗑️ User/workspaceStorage/
+└── 🗑️ logs/                   # Logs
 ```
 
 ### Modificaciones en storage.json
+
 - ✅ Elimina claves de telemetría antiguas
 - ✅ Elimina claves de autenticación
 - ✅ Genera 3 nuevos identificadores únicos:
@@ -202,113 +221,200 @@ windsurf-reset-tool/
   - `telemetry.macMachineId` (64 caracteres hex)
   - `telemetry.devDeviceId` (UUID v4)
 
-## 🛡️ Seguridad y Backups
+---
 
-- ✅ **Backups automáticos** con timestamp antes de cualquier cambio
-- ✅ **Scripts de prueba seguros** que no modifican nada
-- ✅ **Simulación dry-run** para ver qué hará antes de ejecutar
-- ✅ **Verificación post-reseteo** para confirmar cambios
+## 🛡️ Seguridad
 
-### Restaurar desde Backup
+### Características de Seguridad
+
+- ✅ **Backups automáticos** antes de cualquier cambio
+- ✅ **Enmascaramiento de API keys** en logs y output
+- ✅ **Tests de seguridad** integrados
+- ✅ **Scanner de API keys** para detectar exposiciones
+- ✅ **Guía de seguridad** completa
+
+### Verificar Seguridad del Proyecto
+
 ```bash
-# Los backups se guardan como:
-# storage.json.backup_YYYYMMDD_HHMMSS
+# Ejecutar scanner de seguridad
+python tests/test_api_key_cleanup.py
 
-# Para restaurar:
-# 1. Ve a: %APPDATA%\Windsurf\User\globalStorage\
-# 2. Renombra el backup a: storage.json
-# 3. Reinicia Windsurf
+# Ejecutar tests exhaustivos
+python tests/test_comprehensive_security.py
+
+# Ver reporte de seguridad
+cat docs/REPORTE_LIMPIEZA.md
 ```
 
-## 📊 Características Técnicas
+### Restaurar desde Backup
 
-### Compatibilidad
+Los backups se guardan automáticamente como:
+```
+storage.json.backup_YYYYMMDD_HHMMSS
+```
+
+Para restaurar:
+1. Ve a: `%APPDATA%\Windsurf\User\globalStorage\`
+2. Renombra el backup a: `storage.json`
+3. Reinicia Windsurf
+
+---
+
+## 🧪 Tests
+
+### Ejecutar Tests
+
+```bash
+# Todos los tests
+tests/run_all_tests.bat
+
+# Tests individuales
+python tests/test_script.py                      # Tests principales
+python tests/test_api_key_cleanup.py             # Tests de seguridad
+python tests/test_comprehensive_security.py       # Tests exhaustivos
+
+# Simulación (seguro)
+python scripts/simulate_reset.py
+```
+
+### Resultados Esperados
+
+```
+✅ Todas las pruebas pasadas
+📊 45 archivos escaneados
+🔒 0 vulnerabilidades encontradas
+```
+
+---
+
+## 📚 Documentación
+
+### Guías Principales
+
+- 📖 [Guía Rápida](docs/GUIA_RAPIDA.md) - Inicio rápido en 5 minutos
+- 🔒 [Guía de Seguridad](docs/GUIA_SEGURIDAD.md) - Protege tus API keys
+- 🧪 [Guía de Pruebas](docs/GUIA_PRUEBAS.md) - Cómo usar los tests
+- 📝 [Documentación ES](docs/README_ES.md) - Documentación completa
+
+### Recursos Adicionales
+
+- 📋 [Changelog](docs/CHANGELOG.md) - Historial de versiones
+- 🤝 [Contributing](docs/CONTRIBUTING.md) - Guía de contribución
+- 📊 [Reporte de Limpieza](docs/REPORTE_LIMPIEZA.md) - Reporte de seguridad
+
+---
+
+## 🎯 Flujo de Trabajo Recomendado
+
+1. **Instalar dependencias**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Ejecutar simulación** (seguro, no hace cambios)
+   ```bash
+   python scripts/simulate_reset.py
+   ```
+
+3. **Ejecutar tests** (verificar sistema)
+   ```bash
+   python tests/test_script.py
+   ```
+
+4. **Ejecutar reseteo** (hace cambios reales)
+   ```bash
+   python windsurf_reset.py
+   ```
+
+5. **Reiniciar Windsurf** (IMPORTANTE)
+
+6. **Verificar cambios**
+   ```bash
+   python scripts/post_reset_verify.py
+   ```
+
+---
+
+## 📊 Compatibilidad
+
+### Sistemas Operativos
+
 - ✅ Windows 10/11
 - ✅ macOS (Monterey+)
 - ✅ Linux (Ubuntu, Debian, Fedora)
 
-### Dependencias
-- `rich >= 13.0.0` - Interfaz de usuario mejorada
-- `psutil >= 5.9.0` - Detección de procesos (opcional pero recomendado)
-
 ### Python
-- Versión mínima: 3.7
-- Recomendada: 3.9+
 
-## 🧪 Pruebas
+- Versión mínima: **3.7**
+- Recomendada: **3.9+**
 
-### Ejecutar Suite de Pruebas
-```bash
-# Todas las pruebas
-python test_script.py
+### Dependencias
 
-# Solo simulación
-python simulate_reset.py
-
-# Verificar después del reseteo
-python verify_changes.py
+```txt
+rich >= 13.0.0
+psutil >= 5.9.0
 ```
 
-### Resultados Esperados
-```
-📊 Total: 6 pruebas
-✅ Pasadas: 6
-❌ Falladas: 0
-```
-
-## 📝 Versionamiento
-
-Este proyecto usa [Semantic Versioning](https://semver.org/):
-- **MAJOR** (X.0.0): Cambios incompatibles en la API
-- **MINOR** (0.X.0): Nueva funcionalidad compatible
-- **PATCH** (0.0.X): Corrección de bugs compatible
-
-### Versión Actual: 2.0.0
-
-Ver [CHANGELOG.md](CHANGELOG.md) para el historial completo.
+---
 
 ## 🤝 Contribuir
 
 ¡Las contribuciones son bienvenidas! Este es un proyecto educativo.
 
+### Proceso
+
 1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+2. Crea una rama (`git checkout -b feature/AmazingFeature`)
 3. Commit tus cambios (`git commit -m 'Add: Amazing Feature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-Ver [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles.
+Ver [CONTRIBUTING.md](docs/CONTRIBUTING.md) para más detalles.
+
+---
 
 ## 📜 Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la **Licencia MIT** - ver [LICENSE](LICENSE) para más detalles.
 
 ### ⚠️ Disclaimer Educativo
 
-Este software se proporciona con **fines educativos**. Los autores no fomentan ni apoyan la elusión de acuerdos de licencia de software o términos de servicio. Los usuarios son responsables de asegurar que su uso de esta herramienta cumple con todas las leyes aplicables y los términos de servicio de Windsurf.
+Este software se proporciona con **fines educativos**. Los autores no fomentan ni apoyan la elusión de términos de servicio. Los usuarios son responsables de asegurar que su uso cumple con todas las leyes aplicables y los términos de servicio de Windsurf.
+
+---
 
 ## 🙏 Agradecimientos
 
-- [Rich](https://github.com/Textualize/rich) - Por la hermosa interfaz de terminal
-- [psutil](https://github.com/giampaolo/psutil) - Por la detección de procesos
-- Comunidad de Python - Por las herramientas y bibliotecas
+- [Rich](https://github.com/Textualize/rich) - Interfaz de terminal hermosa
+- [psutil](https://github.com/giampaolo/psutil) - Detección de procesos
+- Comunidad de Python - Herramientas y bibliotecas
+
+---
 
 ## 📞 Soporte
 
-- 📖 **Documentación**: Lee [INSTRUCCIONES_FINALES.md](INSTRUCCIONES_FINALES.md)
+- 📖 **Documentación**: [docs/](docs/)
 - 🐛 **Reportar Bugs**: [Issues](https://github.com/FlacoAfk/windsurf-reset-tool/issues)
 - 💬 **Discusiones**: [Discussions](https://github.com/FlacoAfk/windsurf-reset-tool/discussions)
 
-## 🔗 Enlaces
+---
 
-- [Documentación Completa](README_ES.md)
-- [Guía Rápida](GUIA_RAPIDA.md)
-- [Guía de Pruebas](GUIA_PRUEBAS.md)
-- [Changelog](CHANGELOG.md)
+## 📈 Versionamiento
+
+Versión actual: **2.1.0**
+
+Este proyecto usa [Semantic Versioning](https://semver.org/):
+- **MAJOR**: Cambios incompatibles
+- **MINOR**: Nueva funcionalidad compatible
+- **PATCH**: Corrección de bugs
+
+Ver [CHANGELOG.md](docs/CHANGELOG.md) para el historial completo.
 
 ---
 
 <div align="center">
+
+### 🌟 Si este proyecto te fue útil, considera darle una estrella
 
 **Hecho con ❤️ para la comunidad de aprendizaje de Python**
 

@@ -64,7 +64,7 @@ Una API key expuesta permite a otros:
 
 ```
 ✅ BIEN:    sk-ws-01********YHQ
-❌ MAL:     sk-ws-01-njITed-5hvyJ3B5GSBLeV1ZIuCZLB-pVwkWPg8CL...
+❌ MAL:     sk-ws-01-abc123def456ghi789jkl012mno345pqr678...
 ```
 
 **Código de ejemplo:**
@@ -81,9 +81,9 @@ def mask_api_key(api_key: str, visible: int = 8) -> str:
     return f"{start}{middle}{end}"
 
 # Uso
-api_key = "sk-ws-01-njITed-5hvyJ3B5GSBLeV1ZIuCZLB-pVwkWPg8CL-aAhv5-dJa8hchKhL99FiRg6UCtb0DeIsAfCOSiNeVPQXThktrywEA"
+api_key = "sk-ws-01-abc123def456ghi789jkl012mno345pqr678stu901vwx234yz567"
 print(mask_api_key(api_key))
-# Output: sk-ws-01********trywEA
+# Output: sk-ws-01********z567
 ```
 
 ### 2. Redacción Completa
@@ -94,7 +94,7 @@ print(mask_api_key(api_key))
 ✅ BIEN:    ********
 ✅ BIEN:    [REDACTED]
 ✅ BIEN:    <API_KEY_OMITIDA>
-❌ MAL:     sk-ws-01-njITed...
+❌ MAL:     sk-ws-01-abc123...
 ```
 
 ### 3. Uso de Variables de Entorno
@@ -330,10 +330,12 @@ git push origin --force --all
 
 ### Problema Original
 
-Compartiste esta API key públicamente:
+Si compartes una API key públicamente:
 ```
-sk-ws-01-njITed-5hvyJ3B5GSBLeV1ZIuCZLB-pVwkWPg8CL-aAhv5-dJa8hchKhL99FiRg6UCtb0DeIsAfCOSiNeVPQXThktrywEA
+sk-ws-01-********[REDACTED]
 ```
+
+*(Nota: La API key real ha sido eliminada de esta documentación por seguridad)*
 
 ### Evaluación de Riesgo
 

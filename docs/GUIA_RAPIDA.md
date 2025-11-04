@@ -118,7 +118,7 @@ Removed 12 cache/session files              ← Debe ser > 0
 ### Método 2 - Revisar API key:
 1. Después de reiniciar Windsurf
 2. Verifica tu API key en la configuración
-3. Debería ser diferente a: `sk-ws-01-MbT-y1ibft2FFGhFLYzLkQMBhsM4fk6sUrsuRzuWM2hQBepmc0nbdAf2NeJd4tpyomfcC8_R8_60khHVamrO0n1t7fpYHQ`
+3. Debería ser diferente a la anterior: `sk-ws-01-********[OLD_KEY]`
 
 ---
 

@@ -14,8 +14,8 @@ from rich.text import Text
 
 console = Console()
 
-# API key antigua que fue comprometida
-OLD_COMPROMISED_KEY = "sk-ws-01-njITed-5hvyJ3B5GSBLeV1ZIuCZLB-pVwkWPg8CL-aAhv5-dJa8hchKhL99FiRg6UCtb0DeIsAfCOSiNeVPQXThktrywEA"
+# API key antigua que fue comprometida (PLACEHOLDER - usar tu propia key comprometida)
+OLD_COMPROMISED_KEY = "sk-ws-01-EXAMPLE-KEY-REPLACE-WITH-YOUR-COMPROMISED-KEY-IF-NEEDED"
 
 def get_windsurf_base_path() -> Path:
     """Obtiene el directorio base de Windsurf."""
